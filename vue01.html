@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>vue</title>
+	</head>
+	<body>
+		<div id="app">
+			<li v-if="score>=90">优秀</li>
+			<li v-if="score>=80 && score<70">良好</li>
+			<li v-if="score>=70 && score<60">及格</li>
+			<li v-if="score<60">不及格</li>
+			{{rdmNumber}}
+			
+		</div>
+		
+		<script type="text/javascript">
+			let v = new Vue({
+				el: '#app',
+				data:{
+					score:'87',
+					rdmNumber:Math.floor(Math.random()*10)
+				}
+			})
+		</script>
+	</body>
+</html>
