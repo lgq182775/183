@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			li{
+				list-style-type: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			请输入月份（平年）：<input v-model="month"><br>
+			{{month}}月份<br>
+			
+			您输入的月份对应的天数为：
+			<!-- <li v-if="mothDay==1">31天</li>
+			<li v-if="mothDay==2">29天</li>
+			<li v-if="mothDay==3">31天</li>
+			<li v-if="mothDay==4">30天</li>			
+			<li v-if="mothDay==5">31天</li>
+			<li v-if="mothDay==6">30天</li>
+			<li v-if="mothDay==7">31天</li>
+			<li v-if="mothDay==8">31天</li>
+			<li v-if="mothDay==9">30天</li>
+			<li v-if="mothDay==10">31天</li>
+			<li v-if="mothDay==11">30天</li>
+			<li v-if="mothDay==12">31天</li> -->
+			{{dayInMonth}}
+		</div>
+		<script type="text/javascript">
+			let v = new Vue({
+				el:'#app',
+				data:{
+					month:'',
+				},
+				computed: {
+					dayInMonth(){
+						let Month = parseInt(this.month)
+						switch(Month){
+							case 1:
+								return 31;
+							case 2:
+								return 29;
+							case 3:
+								return 31;
+							case 4:
+								return 30;
+							case 5:
+								return 31;
+							case 6:
+								return 30;
+							case 7:
+								return 31;
+							case 8:
+								return 31;
+							case 9:
+								return 30;
+							case 10:
+								return 31;
+							case 11:
+								return 30;
+							case 12:
+								return 31;
+						}
+						return '您输入的月份不合法'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
