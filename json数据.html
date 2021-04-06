@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>json数据</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{schools[0].name}}<br />
+			所在城市：{{schools[0].location}}	
+		</div>
+		<script type="text/javascript">
+			let v = new Vue({
+				el: '#app',
+				data: {
+					schools: [
+						{
+							id:'1',
+							name:'哈佛大学',
+							location:'美国马萨诸塞州剑桥市'
+						},
+						{
+							id:'2',
+							name:'牛津大学',
+							location:'英国牛津郡'
+						},
+						{
+							id:'3',
+							name:'耶鲁大学',
+							location:'美国康涅狄格州纽黑文'
+						},
+						{
+							id:'4',
+							name:'剑桥大学',
+							location:'美国马萨诸塞州剑桥市'
+						}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>
