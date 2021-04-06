@@ -9,7 +9,7 @@
 
 <body>
 	<div id="app">
-		请输入月份（平年）：<input v-model="month"><br>
+		<!--请输入月份（平年）：<input v-model="month"><br> -->
 		{{month}}月份有：{{monthDays[month-1]}}天
 		
 	</div>
@@ -17,7 +17,8 @@
 		let v = new Vue({
 			el: '#app',
 			data: {
-				month: '',
+ 				//month: '',
+				month: '4',
 				monthDays:[31,28,31,30,31,30,31,31,30,31,30,31]
 			}
 		})
