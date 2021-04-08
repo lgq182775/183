@@ -8,11 +8,6 @@
 	<body>
 		<div id="app">
 			请输入国家代码：<input v-model="id"><br>
-			<!-- <div v-for="id in contents">	
-				<div v-if="id === code">
-					您输入的国家代码是：{{contents.code}},它表示{{contents.nation}},首都是{{contents.}}
-				</div>
-			</div> -->
 			<div v-for="content in contents">
 				<div v-if="id == content.code">
 				您输入的国家代码是：+{{content.code}},它表示{{content.nation}},首都是{{content.capital}}	
