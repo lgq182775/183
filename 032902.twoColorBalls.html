@@ -2,18 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>双色球号码组随机生成器</title>
 		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div id="app">
 			随机生成红球：{{red1}}, {{red2}}, {{red3}}, {{red4}}, {{red5}}, {{red6}}
-			<input v-on:click="red1=Math.ceil(Math.random()*10);red2=Math.ceil(Math.random()*33);
-				red3=Math.ceil(Math.random()*10);red4=Math.ceil(Math.random()*33);
-				red5=Math.ceil(Math.random()*10);red6=Math.ceil(Math.random()*33)"
+			<input v-on:click="red1=Math.ceil(Math.random()*33);red2=Math.ceil(Math.random()*33);
+				red3=Math.ceil(Math.random()*33);red4=Math.ceil(Math.random()*33);
+				red5=Math.ceil(Math.random()*33);red6=Math.ceil(Math.random()*33)"
 				type="button" name="button" id="button" value="红球" /><br>
 			随机生成蓝球：{{blue}}
-			<input v-on:click="blue=Math.ceil(Math.random()*10)" type="button" name="button" id="button" value="蓝球" />
+			<input v-on:click="blue=Math.ceil(Math.random()*16)" type="button" name="button" id="button" value="蓝球" />
 		</div>
 		<script type="text/javascript">
 			let v = new Vue({
