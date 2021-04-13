@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>改变title、销毁实例</title>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>{{title}}</h1>
+			<button @click="randomTitle()">改变title</button>
+			<button @click="destroyVm()">销毁实例（不再改变title）</button>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data(){
+					return{
+						title:'Hello World'
+					}
+				},
+				methods:{
+					randomTitle(){
+						this.title = 'Hello ' + ['China','World','Universe'][Math.floor(Math.random()*2.999)]
+					},
+					destroyVm(){
+						this.$destroy()
+					}
+				},
+				beforeCreate(){
+					console.log('before create')
+				},
+				created(){
+					console.log('created')
+				},
+				beforeMount(){
+					console.log('before mount')
+				},
+				mounted(){
+					console.log('mounted')
+				},
+				beforeUpdate(){
+					console.log('before update')
+				},
+				updated(){
+					console.log('updated')
+				},
+				beforeDestroy(){
+					console.log('before destroy')
+				},
+				destroyed(){
+					console.log('destroyed')
+				}
+			})
+		</script>
+	</body>
+</html><!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
