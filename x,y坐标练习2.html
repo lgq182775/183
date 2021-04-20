@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>vue</title>
+	</head>
+	<body>
+		<div id="app">
+			<img src="./img/111.jpg" @click="show()" title="点我看看"><br><br>
+			请点击额头
+			
+		</div>
+		
+		<script type="text/javascript">
+			let v = new Vue({
+				el: '#app',
+				data:{
+					
+				},
+				methods:{
+					show(){
+						if(event.clientX>82 && event.clientX<171 && event.clientY>19 && event.clientY<68){
+							alert("验证成功！");	
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
