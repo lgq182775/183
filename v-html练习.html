@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>vue</title>
+	</head>
+	<body>
+		<div id="app">
+			<p v-html="message">{{message}}</p>
+			<input type="button" @click="show()" value="点我看看"/>
+			
+			
+		</div>
+		
+		<script type="text/javascript">
+			let v = new Vue({
+				el: '#app',
+				data:{
+					message:"<h1>北京大学</h1> <br>位于 北京市</br>"
+				},
+				methods:{
+					show(){
+						console.log("在控制台输出文字：早上好");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
