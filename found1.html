@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>找茬游戏</title>
+	</head>
+	<body>
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>vue</title>
+	</head>
+	<body>
+		<div id="app">
+			请找出图中5处不同：<br>
+			<img src="./img/1.png" @click="show()"><br><br>
+			成功找到{{num}}处不同，获得{{num}}/5分<br />
+			鼠标一共点击{{clickNum}}次
+			
+		</div>
+		
+		<script type="text/javascript">
+			let v = new Vue({
+				el: '#app',
+				data:{
+					num: 0,
+					clickNum: 0,
+					sign1:0,
+					sign2:0,
+					sign3:0,
+					sign4:0,
+					sign5:0
+				},
+				methods:{
+					show(){
+						//花
+						if(this.sign1 == 0 && ((event.clientX>23 && event.clientX<37 && event.clientY>83 && event.clientY<97)
+							||(event.clientX>23 && event.clientX<37 && event.clientY>284 && event.clientY<293))){
+							this.num++;
+							this.sign1=1;
+						}
+						//泡泡圈
+						if(this.sign2 == 0 && ((event.clientX>122 && event.clientX<144 && event.clientY>92 && event.clientY<116)
+							||(event.clientX>122 && event.clientX<144 && event.clientY>290 && event.clientY<316))){
+							this.num++;
+							this.sign2=1;
+							
+						}
+						//瓶子
+						if(this.sign3 == 0 && ((event.clientX>235 && event.clientX<251 && event.clientY>183 && event.clientY<197)
+							||(event.clientX>235 && event.clientX<251 && event.clientY>385 && event.clientY<397))){
+							this.num++;
+							this.sign3=1;
+							
+						}//腮帮
+						if(this.sign4 == 0 && ((event.clientX>181 && event.clientX<212 && event.clientY>120 && event.clientY<152)
+							||(event.clientX>181 && event.clientX<212 && event.clientY>325 && event.clientY<354))){
+							this.num++;
+							this.sign4=1;						
+						}
+						if(this.sign5 == 0 && ((event.clientX>35 && event.clientX<52 && event.clientY>180 && event.clientY<198)
+							||(event.clientX>35 && event.clientX<52 && event.clientY>380 && event.clientY<398))){
+							this.num++;
+							this.sign5=1;							
+						}
+						if(this.num == 5){
+							alert("恭喜通关！");
+						}
+						if (event.clientX >= 0) {
+							this.clickNum++;
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
